@@ -1,12 +1,8 @@
-# Sobre {{dict: site: name}} {#title}
+# Sobre o Cadastro Nacional de Bibliotecas {#title}
 
-A Prefeitura Municipal de João Pessoa, por meio da Fundação Cultural de João Pessoa (Funjope), firmou uma parceria com o Instituto TIM com o objetivo de implementar na cidade o projeto Mapas Culturais. Mapas Culturais é uma ferramenta colaborativa, que reúne informações sobre agentes, espaços, eventos e projetos culturais, fornecendo ao poder público uma radiografia da área de cultura e ao cidadão um mapa de espaços e eventos culturais da cidade.
+O objetivo do cadastro é mapear de maneira abrangente as bibliotecas públicas e comunitárias existentes no país, levantando dados hoje pouco conhecidos, como a relação institucional, público alvo, acervo, serviços, infraestrutura e gestão.
 
-A plataforma foi desenvolvida de acordo com o Sistema Nacional de Informação e Indicadores Culturais (SNIIC) do Ministério da Cultura e contribui para que os gestores públicos realizem alguns dos objetivos do Plano Nacional de Cultura (PNC). Mapas culturais é um software livre e pode ser adotado gratuitamente por qualquer cidade ou estado do país.
+O novo formato do cadastramento, agora todo online, também será aberto para consulta de cidadãos, instituições públicas ou privadas, e, principalmente, dos governos municipais e estaduais, oferecendo informações atualizadas para a constituição de redes locais de bibliotecas e para o desenvolvimento de políticas locais de acesso à leitura e à informação. Esta nova ferramenta parte de uma concepção política que valoriza a autonomia e o controle social.
 
-João Pessoa é a primeira capital do Nordeste a implementar a ferramenta na gestão pública da cultura, com JP Cultura. A plataforma preenche a lacuna dos registros de nossas experiências culturais e contribui para que compreendamos como e por que se dão as transformações econômicas, políticas, sociais e culturais em nossa cidade.
-
-Você encontra mais informações sobre a ferramenta Mapas Culturais no site do [Instituto TIM](http://institutotim.org.br/).
-
-Para dúvidas e sugestões sobre JP Cultura, utilize o endereço [mapaculturaljp@gmail.com](mailto:mapaculturaljp@gmail.com).
+Neste primeiro momento disponibilizamos a tod@s  os contatos e o georeferênciamento de todas as bibliotecas públicas cadastradas do Sistema Nacional de Bibliotecas Públicas.  No segundo semestre deste ano, iremos abrir o cadastro para que os gestores complementem as demais as informações sobre suas bibliotecas.
 
