@@ -70,7 +70,7 @@ $url_search_projects = $this->searchProjectsUrl;
         <p><?php $this->dict('home: welcome') ?></p>
         <p>
         
-        <a href="<?php echo $url_search_spaces ?>">Visite o mapa</a> e naegue pelas <b><?php echo $num_spaces ?> Bibliotecas cadastradas</b>.
+        <a href="<?php echo $url_search_spaces ?>">Visite o mapa</a> e navegue pelas <b><?php echo $num_spaces ?> Bibliotecas cadastradas</b>.
         
         </p>
     </div>
