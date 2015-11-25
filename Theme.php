@@ -1,9 +1,9 @@
 <?php
 namespace MapaBibliotecas;
-use MapasCulturais\Themes\BaseV1;
+use BaseMinc;
 use MapasCulturais\App;
 
-class Theme extends BaseV1\Theme{
+class Theme extends BaseMinc\Theme{
 
     protected static function _getTexts(){
         return array(
@@ -31,5 +31,24 @@ class Theme extends BaseV1\Theme{
     static function getThemeFolder() {
         return __DIR__;
     }
+    
+    protected function _getAgentMetadata() {
+        return [];
+    }
+    
+    protected function _getEventMetadata() {
+        return [];
+    }
+    
+    protected function _getProjectMetadata() {
+        return [];
+    }
+    
+    protected function _getSpaceMetadata() {
+        return [];
+    }
 
+    public function getMetadataPrefix() {
+        return 'bib_';
+    }
 }
