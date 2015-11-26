@@ -27,9 +27,28 @@ class Theme extends BaseMinc\Theme{
 //            'search: verified' => "Verificados"
             );
     }
+    
+    protected function _init() {
+        $app = App::i();
+        
+        /*
+         *  Modifica a consulta da API de espaços para só retornar Bibliotecas 
+         * 
+         * @see protectec/application/conf/space-types.php
+         */
+        $app->hook('API.<<*>>(space).query', function(&$data, &$select_properties, &$dql_joins, &$dql_where){            
+            $dql_where .= ' AND e._type >= 20 AND e._type <= 29';
+        });
+        
+        parent::_init();
+    }
 
     static function getThemeFolder() {
         return __DIR__;
+    }
+
+    public function getMetadataPrefix() {
+        return 'bib_';
     }
     
     protected function _getAgentMetadata() {
@@ -46,9 +65,5 @@ class Theme extends BaseMinc\Theme{
     
     protected function _getSpaceMetadata() {
         return [];
-    }
-
-    public function getMetadataPrefix() {
-        return 'bib_';
     }
 }
