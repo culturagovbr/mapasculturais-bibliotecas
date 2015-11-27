@@ -66,4 +66,29 @@ class Theme extends BaseMinc\Theme{
     protected function _getSpaceMetadata() {
         return [];
     }
+    
+    
+    function register(){
+        parent::register();
+        $app = App::i();
+        $app->hook('app.register', function(&$registry) {
+            $group = null;
+            $registry['entity_type_groups']['MapasCulturais\Entities\Space'] = array_filter($registry['entity_type_groups']['MapasCulturais\Entities\Space'], function($item) use (&$group){
+                if($item->name === 'Bibliotecas'){
+                    $group = $item;
+                    return $item;
+                } else {
+                    return null;
+                }
+            });
+            
+            $registry['entity_types']['MapasCulturais\Entities\Space'] = array_filter($registry['entity_types']['MapasCulturais\Entities\Space'], function($item) use ($group){
+                if($item->id >= $group->min_id && $item->id <= $group->max_id){
+                    return $item;
+                } else {
+                    return null;
+                }
+            });
+        });
+    }
 }
