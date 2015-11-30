@@ -71,8 +71,12 @@ class Theme extends BaseMinc\Theme {
     protected function _getEventMetadata() {
         return [];
     }
-
+    
     protected function _getProjectMetadata() {
+        return [];
+    }
+
+    protected function _getSpaceMetadata() {
         return [
             'horario_segunda_das' => [
                 'label' => 'Aberto nas segundas-feiras das',
@@ -185,6 +189,8 @@ class Theme extends BaseMinc\Theme {
             'comunidades' => [
                 'label' => 'Comunidades ou grupos específicos',
                 'type' => 'multiselect',
+                'allowOther' => true,
+                'allowOtherText' => 'Outros',
                 'options' => [
                     'Quilombolas',
                     'Indígenas',
@@ -664,10 +670,6 @@ class Theme extends BaseMinc\Theme {
                 ]
             ]
         ];
-    }
-
-    protected function _getSpaceMetadata() {
-        return [];
     }
 
     function register() {
