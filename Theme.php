@@ -42,6 +42,18 @@ class Theme extends BaseMinc\Theme {
         });
 
         parent::_init();
+        
+        
+        $app->hook('template(space.<<create|edit|single>>.tabs):end', function(){
+            $this->part('tabs-biblioteca', ['entity' => $this->data->entity]);
+        });
+        
+        $app->hook('template(space.<<create|edit|single>>.tabs-content):end', function(){
+            $this->part('tab-publico', ['entity' => $this->data->entity]);
+            $this->part('tab-acervo', ['entity' => $this->data->entity]);
+            $this->part('tab-gestao', ['entity' => $this->data->entity]);
+            $this->part('tab-servicos', ['entity' => $this->data->entity]);
+        });
     }
 
     static function getThemeFolder() {
