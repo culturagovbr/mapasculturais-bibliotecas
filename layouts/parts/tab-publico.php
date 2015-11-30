@@ -9,7 +9,7 @@
         
         <p>
             <span class="label">A biblioteca trabalha com comunidades ou grupos específicos?:</span> 
-            <editable-multiselect entity-property="bib_comunidades" empty-label="Selecione" allow-other="true"></editable-multiselect>
+            <editable-multiselect entity-property="bib_comunidades" empty-label="Selecione" allow-other="true" box-title="A biblioteca trabalha com comunidades ou grupos específicos?:"></editable-multiselect>
         </p>
         
     </div>
