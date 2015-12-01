@@ -51,6 +51,7 @@ class Theme extends BaseMinc\Theme {
         $app->hook('template(space.<<create|edit|single>>.tabs-content):end', function(){
             $this->part('tab-publico', ['entity' => $this->data->entity]);
             $this->part('tab-acervo', ['entity' => $this->data->entity]);
+            $this->part('tab-infraestrutura', ['entity' => $this->data->entity]);
             $this->part('tab-gestao', ['entity' => $this->data->entity]);
             $this->part('tab-servicos', ['entity' => $this->data->entity]);
         });
