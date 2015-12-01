@@ -349,6 +349,8 @@ WHERE
                     $space->__metadata->endereco = "{$space->__metadata->En_Nome_Logradouro}, {$space->__metadata->En_Num}, {$space->__metadata->En_Bairro}, {$space->__metadata->En_CEP}, {$space->__metadata->En_Municipio}, {$space->__metadata->En_Estado}";
                 }
 
+                $space->__metadata->num_sniic = "ES-$id";
+
                 foreach($space->__metadata as $key => $val){
                     $conn->executeQuery("
                         INSERT INTO space_meta (
