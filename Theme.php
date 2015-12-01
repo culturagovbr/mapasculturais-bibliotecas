@@ -398,7 +398,7 @@ class Theme extends BaseMinc\Theme {
                 ]
             ],
             'infra_computadores_disponiveis' => [
-                'label' => 'Número de computadores com acesso a internet estão disponíveis para o público',
+                'label' => 'Número de computadores com acesso a internet que estão disponíveis para o público',
                 'type' => 'int',
                 'validation' => [
                     'v::intVal()' => 'o número de computadores deve ser um número inteiro'
@@ -470,7 +470,7 @@ class Theme extends BaseMinc\Theme {
                     'v::email()' => 'O email informado é inválido.'
                 ]
             ],
-            'geracao_dirigente_formacao' => [
+            'gestao_dirigente_formacao' => [
                 'label' => 'Formação do dirigente da biblioteca',
                 'type' => 'select',
                 'allowOther' => true,
@@ -563,7 +563,7 @@ class Theme extends BaseMinc\Theme {
                 'options' => [ 'sim', 'não']
             ],
             'servicos_emprestimos_mediaMensal' => [
-                'label' => 'Média mensal de empréstimos?',
+                'label' => 'Média mensal de empréstimos',
                 'type' => 'int',
                 'validation' => [
                     'v::intVal()' => 'O valor deve ser um número inteiro'

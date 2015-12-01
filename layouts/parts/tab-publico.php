@@ -8,13 +8,13 @@
         </p>
 
         <p>
-            <span class="label">A biblioteca trabalha com comunidades ou grupos específicos?:</span> 
+            <span class="label">A biblioteca trabalha com comunidades ou grupos específicos?</span> 
             <editable-multiselect entity-property="bib_comunidades" empty-label="Selecione" allow-other="true" box-title="A biblioteca trabalha com comunidades ou grupos específicos?:"></editable-multiselect>
         </p>
 
         <p>
-            <span class="label">bib_publico_frequenciaMedia:</span>
-            <span class="js-editable" data-edit="bib_publico_frequenciaMedia" data-original-title="bib_publico_frequenciaMedia" data-emptytext="Selecione">
+            <span class="label">Freqüência média mensal dos usuários na biblioteca:</span>
+            <span class="js-editable" data-edit="bib_publico_frequenciaMedia" data-original-title="Freqüência média mensal dos usuários na biblioteca" data-emptytext="Selecione">
                 <?php echo $entity->bib_publico_frequenciaMedia; ?>
             </span>
         </p>
