@@ -55,6 +55,10 @@ class Theme extends BaseMinc\Theme {
             $this->part('tab-gestao', ['entity' => $this->data->entity]);
             $this->part('tab-servicos', ['entity' => $this->data->entity]);
         });
+
+        $app->hook('template(space.<<create|edit|single>>.acessibilidade):after', function(){
+            $this->part('acessibilidade', ['entity' => $this->data->entity]);
+        });
     }
 
     static function getThemeFolder() {
