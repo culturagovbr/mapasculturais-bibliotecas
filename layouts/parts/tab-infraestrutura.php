@@ -29,7 +29,7 @@
         <?php if($this->isEditable() || $entity->bib_infra_predio_areaConstruida): ?>
         <p>
             <span class="label">Área aproximada da biblioteca (área construída aproximada):</span>
-            <span class="js-editable" data-edit="bib_infra_predio_areaConstruida" data-original-title="Área aproximada da biblioteca (área construída aproximada)" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_infra_predio_areaConstruida" data-original-title="Área aproximada da biblioteca (área construída aproximada)" data-emptytext="Informe">
                 <?php echo $entity->bib_infra_predio_areaConstruida; ?>
             </span>
         </p>
@@ -38,7 +38,7 @@
         <?php if($this->isEditable() || $entity->bib_infra_computadores_numero): ?>
         <p>
             <span class="label">Número de computadores que a biblioteca possui:</span>
-            <span class="js-editable" data-edit="bib_infra_computadores_numero" data-original-title="Número de computadores que a biblioteca possui" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_infra_computadores_numero" data-original-title="Número de computadores que a biblioteca possui" data-emptytext="Informe">
                 <?php echo $entity->bib_infra_computadores_numero; ?>
             </span>
         </p>
@@ -65,7 +65,7 @@
         <?php if($this->isEditable() || $entity->bib_infra_computadores_disponiveis): ?>
         <p>
             <span class="label">Quantos computadores com acesso a internet estão disponíveis para o público?</span>
-            <span class="js-editable" data-edit="bib_infra_computadores_disponiveis" data-original-title="bib_infra_computadores_disponiveis" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_infra_computadores_disponiveis" data-original-title="bib_infra_computadores_disponiveis" data-emptytext="Informe">
                 <?php echo $entity->bib_infra_computadores_disponiveis; ?>
             </span>
         </p>

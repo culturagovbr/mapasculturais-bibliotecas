@@ -13,7 +13,7 @@
         <?php if($this->isEditable() || $entity->bib_gestao_dirigente_nome): ?>
         <p>
             <span class="label">Nome do dirigente da biblioteca:</span>
-            <span class="js-editable" data-edit="bib_gestao_dirigente_nome" data-original-title="Nome do dirigente da biblioteca" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_gestao_dirigente_nome" data-original-title="Nome do dirigente da biblioteca" data-emptytext="Informe">
                 <?php echo $entity->bib_gestao_dirigente_nome; ?>
             </span>
         </p>
@@ -40,7 +40,7 @@
         <?php if($this->isEditable() || $entity->bib_gestao_dirigente_email): ?>
         <p>
             <span class="label">E-mail do dirigente da biblioteca:</span>
-            <span class="js-editable" data-edit="bib_gestao_dirigente_email" data-original-title="E-mail do dirigente da biblioteca" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_gestao_dirigente_email" data-original-title="E-mail do dirigente da biblioteca" data-emptytext="Informe">
                 <?php echo $entity->bib_gestao_dirigente_email; ?>
             </span>
         </p>
@@ -56,7 +56,7 @@
         <?php if($this->isEditable() || $entity->bib_funcionarios_contratados_num): ?>
         <p>
             <span class="label">Número total de funcionários contratados da biblioteca:</span>
-            <span class="js-editable" data-edit="bib_funcionarios_contratados_num" data-original-title="Número total de funcionários contratados da biblioteca" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_funcionarios_contratados_num" data-original-title="Número total de funcionários contratados da biblioteca" data-emptytext="Informe">
                 <?php echo $entity->bib_funcionarios_contratados_num; ?>
             </span>
         </p>
@@ -65,7 +65,7 @@
         <?php if($this->isEditable() || $entity->bib_funcionarios_bibliotecarios_num): ?>
         <p>
             <span class="label">Número total de Bibliotecários graduados:</span>
-            <span class="js-editable" data-edit="bib_funcionarios_bibliotecarios_num" data-original-title="Número total de Bibliotecários graduados" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_funcionarios_bibliotecarios_num" data-original-title="Número total de Bibliotecários graduados" data-emptytext="Informe">
                 <?php echo $entity->bib_funcionarios_bibliotecarios_num; ?>
             </span>
         </p>
@@ -74,7 +74,7 @@
         <?php if($this->isEditable() || $entity->bib_voluntarios_num): ?>
         <p>
             <span class="label">Número de voluntários:</span>
-            <span class="js-editable" data-edit="bib_voluntarios_num" data-original-title="Número de voluntários" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_voluntarios_num" data-original-title="Número de voluntários" data-emptytext="Informe">
                 <?php echo $entity->bib_voluntarios_num; ?>
             </span>
         </p>
@@ -108,7 +108,7 @@
         <?php if($this->isEditable() || $entity->bib_associacao_nome): ?>
         <p>
             <span class="label">Nome da associação:</span>
-            <span class="js-editable" data-edit="bib_associacao_nome" data-original-title="Nome da associação" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_associacao_nome" data-original-title="Nome da associação" data-emptytext="Informe">
                 <?php echo $entity->bib_associacao_nome; ?>
             </span>
         </p>
@@ -117,7 +117,7 @@
         <?php if($this->isEditable() || $entity->bib_associacao_cnpj): ?>
         <p>
             <span class="label">CNPJ da associação:</span>
-            <span class="js-editable" data-edit="bib_associacao_cnpj" data-original-title="CNPJ da associação" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_associacao_cnpj" data-original-title="CNPJ da associação" data-emptytext="Informe">
                 <?php echo $entity->bib_associacao_cnpj; ?>
             </span>
         </p>
@@ -126,7 +126,7 @@
         <?php if($this->isEditable() || $entity->bib_associacao_email): ?>
         <p>
             <span class="label">E-mail da associação:</span>
-            <span class="js-editable" data-edit="bib_associacao_email" data-original-title="E-mail da associação" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_associacao_email" data-original-title="E-mail da associação" data-emptytext="Informe">
                 <?php echo $entity->bib_associacao_email; ?>
             </span>
         </p>
@@ -135,7 +135,7 @@
         <?php if($this->isEditable() || $entity->bib_parcerias_descricao): ?>
         <p>
             <span class="label">Descrição das parcerias:</span>
-            <span class="js-editable" data-edit="bib_parcerias_descricao" data-original-title="Descrição das parcerias" data-emptytext="Selecione">
+            <span class="js-editable" data-edit="bib_parcerias_descricao" data-original-title="Descrição das parcerias" data-emptytext="Informe">
                 <?php echo $entity->bib_parcerias_descricao; ?>
             </span>
         </p>
