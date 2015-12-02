@@ -26,6 +26,28 @@ class Theme extends BaseMinc\Theme {
 //
 //            'search: verified results' => 'Resultados Verificados',
 //            'search: verified' => "Verificados"
+            
+                        
+            'entities: Spaces of the agent'=> 'Bibliotecas do agente',
+            'entities: Space Description'=> 'Descrição da Biblioteca',
+            'entities: My Spaces'=> 'Minhas Bibliotecas',
+            'entities: My spaces'=> 'Minhas bibliotecas',
+            
+            'entities: no registered spaces'=> 'nenhuma biblioteca cadastrada',
+            'entities: no spaces'=> 'nenhuma biblioteca',
+            
+            'entities: Space' => 'Biblioteca',
+            'entities: Spaces' => 'Bibliotecas',
+            'entities: space' => 'biblioteca',
+            'entities: spaces' => 'bibliotecas',
+            'entities: parent space' => 'biblioteca mãe',
+            'entities: a space' => 'uma biblioteca',
+            'entities: the space' => 'a biblioteca',
+            'entities: of the space' => 'da biblioteca',            
+            'entities: In this space' => 'Nesta biblioteca',
+            'entities: in this space' => 'nesta biblioteca',
+            'entities: registered spaces' => 'bibliotecas cadastradas',
+            'entities: new space' => 'nova biblioteca',
         );
     }
 
@@ -51,8 +73,13 @@ class Theme extends BaseMinc\Theme {
         $app->hook('template(space.<<create|edit|single>>.tabs-content):end', function(){
             $this->part('tab-publico', ['entity' => $this->data->entity]);
             $this->part('tab-acervo', ['entity' => $this->data->entity]);
+            $this->part('tab-infraestrutura', ['entity' => $this->data->entity]);
             $this->part('tab-gestao', ['entity' => $this->data->entity]);
             $this->part('tab-servicos', ['entity' => $this->data->entity]);
+        });
+
+        $app->hook('template(space.<<create|edit|single>>.acessibilidade):after', function(){
+            $this->part('acessibilidade', ['entity' => $this->data->entity]);
         });
     }
 
@@ -393,7 +420,7 @@ class Theme extends BaseMinc\Theme {
                 ]
             ],
             'infra_computadores_disponiveis' => [
-                'label' => 'Número de computadores com acesso a internet estão disponíveis para o público',
+                'label' => 'Número de computadores com acesso a internet que estão disponíveis para o público',
                 'type' => 'int',
                 'validation' => [
                     'v::intVal()' => 'o número de computadores deve ser um número inteiro'
@@ -465,7 +492,7 @@ class Theme extends BaseMinc\Theme {
                     'v::email()' => 'O email informado é inválido.'
                 ]
             ],
-            'geracao_dirigente_formacao' => [
+            'gestao_dirigente_formacao' => [
                 'label' => 'Formação do dirigente da biblioteca',
                 'type' => 'select',
                 'allowOther' => true,
@@ -558,7 +585,7 @@ class Theme extends BaseMinc\Theme {
                 'options' => [ 'sim', 'não']
             ],
             'servicos_emprestimos_mediaMensal' => [
-                'label' => 'Média mensal de empréstimos?',
+                'label' => 'Média mensal de empréstimos',
                 'type' => 'int',
                 'validation' => [
                     'v::intVal()' => 'O valor deve ser um número inteiro'
