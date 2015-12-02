@@ -26,6 +26,28 @@ class Theme extends BaseMinc\Theme {
 //
 //            'search: verified results' => 'Resultados Verificados',
 //            'search: verified' => "Verificados"
+            
+                        
+            'entities: Spaces of the agent'=> 'Bibliotecas do agente',
+            'entities: Space Description'=> 'Descrição da Biblioteca',
+            'entities: My Spaces'=> 'Minhas Bibliotecas',
+            'entities: My spaces'=> 'Minhas bibliotecas',
+            
+            'entities: no registered spaces'=> 'nenhuma biblioteca cadastrada',
+            'entities: no spaces'=> 'nenhuma biblioteca',
+            
+            'entities: Space' => 'Biblioteca',
+            'entities: Spaces' => 'Bibliotecas',
+            'entities: space' => 'biblioteca',
+            'entities: spaces' => 'bibliotecas',
+            'entities: parent space' => 'biblioteca mãe',
+            'entities: a space' => 'uma biblioteca',
+            'entities: the space' => 'a biblioteca',
+            'entities: of the space' => 'da biblioteca',            
+            'entities: In this space' => 'Nesta biblioteca',
+            'entities: in this space' => 'nesta biblioteca',
+            'entities: registered spaces' => 'bibliotecas cadastradas',
+            'entities: new space' => 'nova biblioteca',
         );
     }
 
