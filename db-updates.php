@@ -210,7 +210,7 @@ WHERE
         return false;
     },
 
-    'importa bibliotecas' => function () use ($conn){
+    'importa bibliotecas' => function () use ($conn, $app){
         $repetidas = ['ATELIER DAS PALAVRAS	Avenida Santo Antônio - COMPLEMENTO: Nº 13 - CIDADE: Rio de Janeiro - ESTADO: RJ - CEP: 20941530',
 'BIBLIOTECA CIDADE ALTA BICA	Rua Ponto Chique - COMPLEMENTO: Nº 117 - CIDADE: Rio de Janeiro - ESTADO: RJ - CEP: 21010315',
 'BIBLIOTECA COMUNITÁRIA CANTINHO DOS SONHOS	Jeromenha - COMPLEMENTO: - CIDADE: Betim - ESTADO: MG - CEP: 32677790',
@@ -334,7 +334,7 @@ WHERE
 
                 $space->is_verified = $space->is_verified ? 'true' : 'false';
                 $space->public = $space->public ? 'true' : 'false';
-                $space->agent_id = 1;
+                $space->agent_id = $app->config['snbp.agentId'];
                 $space->name = $conn->quote($space->name);
 
                 $conn->executeQuery("
