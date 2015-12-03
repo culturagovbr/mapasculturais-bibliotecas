@@ -22,7 +22,7 @@
         <?php if($this->isEditable() || $entity->bib_acervo_formaAquisicao): ?>
         <p>
             <span class="label">Forma de aquisição do acervo:</span>
-            <editable-multiselect entity-property="bib_acervo_formaAquisicao" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_acervo_formaAquisicao" empty-label="Selecione" box-title="Forma de aquisição do acervo"></editable-multiselect>
         </p>
         <?php endif; ?>
 
@@ -38,14 +38,14 @@
         <?php if($this->isEditable() || $entity->bib_acervo_tipos): ?>
         <p>
             <span class="label">Tipos de documentos e suportes que compõem o acervo:</span>
-            <editable-multiselect entity-property="bib_acervo_tipos" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_acervo_tipos" empty-label="Selecione" box-title="Tipos de documentos e suportes que compõem o acervo"></editable-multiselect>
         </p>
         <?php endif; ?>
 
         <?php if($this->isEditable() || $entity->bib_acervo_sistemaClassificacao): ?>
         <p>
             <span class="label">Utiliza algum sistema de classificação?</span>
-            <editable-singleselect entity-property="bib_acervo_sistemaClassificacao" empty-label="Selecione"></editable-singleselect>
+            <editable-singleselect entity-property="bib_acervo_sistemaClassificacao" empty-label="Selecione" bot-title="Sistema de classificação"></editable-singleselect>
         </p>
         <?php endif; ?>
 

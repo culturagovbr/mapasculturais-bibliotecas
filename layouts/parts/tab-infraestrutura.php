@@ -22,7 +22,7 @@
         <?php if($this->isEditable() || $entity->bib_infra_predio_espacosDiferenciados): ?>
         <p>
             <span class="label">Espaços diferenciados para públicos, acervos e atividades para:</span>
-            <editable-multiselect entity-property="bib_infra_predio_espacosDiferenciados" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_infra_predio_espacosDiferenciados" empty-label="Selecione" box-title="Espaços diferenciados para públicos, acervos e atividades"></editable-multiselect>
         </p>
         <?php endif; ?>
 

@@ -49,7 +49,7 @@
         <?php if($this->isEditable() || $entity->bib_gestao_dirigente_formacao): ?>
         <p>
             <span class="label">Formação do dirigente da biblioteca:</span>
-            <editable-singleselect entity-property="bib_gestao_dirigente_formacao" empty-label="Selecione"></editable-singleselect>
+            <editable-singleselect entity-property="bib_gestao_dirigente_formacao" empty-label="Selecione" box-title="Formação do dirigente da biblioteca"></editable-singleselect>
         </p>
         <?php endif; ?>
 
@@ -83,7 +83,7 @@
         <?php if($this->isEditable() || $entity->bib_programasGovernamentais): ?>
         <p>
             <span class="label">Programas Governamentais que a biblioteca participou ou foi contemplada:</span>
-            <editable-multiselect entity-property="bib_programasGovernamentais" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_programasGovernamentais" empty-label="Selecione" box-title="Programas Governamentais que a biblioteca participou ou foi contemplada"></editable-multiselect>
         </p>
         <?php endif; ?>
 

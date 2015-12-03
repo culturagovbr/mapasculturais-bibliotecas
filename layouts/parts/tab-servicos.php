@@ -22,7 +22,7 @@
         <?php if($this->isEditable() || $entity->bib_assuntosMaisProcurados): ?>
         <p>
             <span class="label">Assuntos mais procurados:</span>
-            <editable-multiselect entity-property="bib_assuntosMaisProcurados" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_assuntosMaisProcurados" empty-label="Selecione" box-title="Assuntos mais procurados"></editable-multiselect>
         </p>
         <?php endif; ?>
 
@@ -128,7 +128,7 @@
         <?php if($this->isEditable() || $entity->bib_servicos_acaoCultural): ?>
         <p>
             <span class="label">Ações culturais:</span>
-            <editable-multiselect entity-property="bib_servicos_acaoCultural" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_servicos_acaoCultural" empty-label="Selecione" box-title="Ações culturais"></editable-multiselect>
         </p>
         <?php endif; ?>
 
@@ -144,7 +144,7 @@
         <?php if($this->isEditable() || $entity->bib_servicos_extensao): ?>
         <p>
             <span class="label">Serviço de extensão:</span>
-            <editable-multiselect entity-property="bib_servicos_extensao" empty-label="Selecione"></editable-multiselect>
+            <editable-multiselect entity-property="bib_servicos_extensao" empty-label="Selecione" box-title="Serviço de extensão"></editable-multiselect>
         </p>
         <?php endif; ?>
 
