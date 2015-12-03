@@ -106,85 +106,85 @@ class Theme extends BaseMinc\Theme {
     protected function _getSpaceMetadata() {
         return [
             'horario_segunda_das' => [
-                'label' => 'Aberto nas segundas-feiras das',
+                'label' => 'Aberto nas segundas-feiras das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_segunda_ate' => [
-                'label' => 'Aberto nas segundas-feiras até às',
+                'label' => 'Aberto nas segundas-feiras até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_terca_das' => [
-                'label' => 'Aberto nas terças-feiras das',
+                'label' => 'Aberto nas terças-feiras das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_terca_ate' => [
-                'label' => 'Aberto nas terças-feiras até às',
+                'label' => 'Aberto nas terças-feiras até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_quarta_das' => [
-                'label' => 'Aberto nas quartas-feiras das',
+                'label' => 'Aberto nas quartas-feiras das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_quarta_ate' => [
-                'label' => 'Aberto nas quartas-feiras até às',
+                'label' => 'Aberto nas quartas-feiras até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_quinta_das' => [
-                'label' => 'Aberto nas quintas-feiras das',
+                'label' => 'Aberto nas quintas-feiras das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_quinta_ate' => [
-                'label' => 'Aberto nas quintas-feiras até às',
+                'label' => 'Aberto nas quintas-feiras até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_sexta_das' => [
-                'label' => 'Aberto nas sextas-feiras das',
+                'label' => 'Aberto nas sextas-feiras das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_sexta_ate' => [
-                'label' => 'Aberto nas sextas-feiras até às',
+                'label' => 'Aberto nas sextas-feiras até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_sabado_das' => [
-                'label' => 'Aberto nos sábados das',
+                'label' => 'Aberto nos sábados das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_sabado_ate' => [
-                'label' => 'Aberto nos sábados até às',
+                'label' => 'Aberto nos sábados até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_domingo_das' => [
-                'label' => 'Aberto nos domingos das',
+                'label' => 'Aberto nos domingos das (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
             ],
             'horario_domingo_ate' => [
-                'label' => 'Aberto nos domingos até às',
+                'label' => 'Aberto nos domingos até as (0:00:00)',
                 'validations' => [
                     'v::date("H:i:s")'
                 ]
