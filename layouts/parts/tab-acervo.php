@@ -45,7 +45,7 @@
         <?php if($this->isEditable() || $entity->bib_acervo_sistemaClassificacao): ?>
         <p>
             <span class="label">Utiliza algum sistema de classificação?</span>
-            <editable-select entity-property="bib_acervo_sistemaClassificacao" empty-label="Selecione"></editable-select>
+            <editable-singleselect entity-property="bib_acervo_sistemaClassificacao" empty-label="Selecione"></editable-singleselect>
         </p>
         <?php endif; ?>
 

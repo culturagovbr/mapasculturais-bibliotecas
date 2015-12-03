@@ -49,7 +49,7 @@
         <?php if($this->isEditable() || $entity->bib_gestao_dirigente_formacao): ?>
         <p>
             <span class="label">Formação do dirigente da biblioteca:</span>
-            <editable-select entity-property="bib_gestao_dirigente_formacao" empty-label="Selecione"></editable-select>
+            <editable-singleselect entity-property="bib_gestao_dirigente_formacao" empty-label="Selecione"></editable-singleselect>
         </p>
         <?php endif; ?>
 
