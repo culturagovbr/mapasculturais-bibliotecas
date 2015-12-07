@@ -9,7 +9,7 @@ class Theme extends BaseMinc\Theme {
 
     protected static function _getTexts() {
         return array(
-            'site: name' => 'Bibliotecas',
+            'site: name' => 'Sistema Nacional de Bibliotecas Públicas',
             'site: in the region' => 'SNB',
             'site: of the region' => 'SNB',
             'site: owner' => 'SNB',
