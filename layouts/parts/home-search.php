@@ -1,6 +1,6 @@
 <?php 
 $class_space = 'MapasCulturais\Entities\Space';
-$num_spaces = $this->getNumEntities($class_space);
+//$num_spaces = $this->getNumEntities($class_space);
 
 $url_search_spaces = $this->searchSpacesUrl;
 ?>
@@ -10,7 +10,7 @@ $url_search_spaces = $this->searchSpacesUrl;
         <p><?php $this->dict('home: welcome') ?></p>
         <p>
         
-        <a href="<?php echo $url_search_spaces ?>">Visite o mapa</a> e navegue pelas <b><?php echo $num_spaces ?> Bibliotecas cadastradas</b>.
+        <a href="<?php echo $url_search_spaces ?>">Visite o mapa</a> e navegue pelas <b>Bibliotecas cadastradas</b>.
         
         </p>
     </div>
