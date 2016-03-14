@@ -363,5 +363,70 @@ WHERE
         }
 
         print_r($_repetidas);
+    },
+
+    'Migra bibliotecas para os Sistemas Estaduais' => function () use ($conn, $app) {
+        $mapeamento = [
+            "AC" => 200916, //Acre (AC) -  http://mapas.cultura.gov.br/espaco/200916/
+            "AL" => 202314, //Alagoas (AL) -  já tem http://mapas.cultura.gov.br/agente/202314/
+            "AP" => 12493,  //Amapá (AP) - http://bibliotecas.cultura.gov.br/agente/12493/
+            "AM" => 12511,  //Amazonas (AM) - http://bibliotecas.cultura.gov.br/agente/12511/
+            "BA" => 12514,  //Bahia (BA) - http://bibliotecas.cultura.gov.br/agente/12514/
+            "CE" => 12515,  //Ceará (CE) - http://bibliotecas.cultura.gov.br/agente/12515/
+            "DF" => 12520,  //Distrito Federal (DF) - http://bibliotecas.cultura.gov.br/agente/12520/
+            "ES" => 101404, //Espírito Santo (ES) - já tem - http://mapas.cultura.gov.br/agente/101404/
+            "GO" => 12522,  //Goiás (GO) - http://bibliotecas.cultura.gov.br/agente/12522/
+            "MA" => 12537,  //Maranhão (MA)- http://bibliotecas.cultura.gov.br/agente/12537/
+            "MT" => 12539,  //Mato Grosso (MT) - http://bibliotecas.cultura.gov.br/agente/12539/
+            "MS" => 12540,  //Mato Grosso do Sul (MS) - http://bibliotecas.cultura.gov.br/agente/12540/
+            "MG" => 12541,  //Minas Gerais (MG) - http://bibliotecas.cultura.gov.br/agente/12541/
+            "PA" => 12542,  //Pará (PA) - http://bibliotecas.cultura.gov.br/agente/12542/
+            "PB" => 12543,  //Paraíba (PB) - http://bibliotecas.cultura.gov.br/agente/12543/
+            "PR" => 12544,  //Paraná (PR) - http://bibliotecas.cultura.gov.br/agente/12544/
+            "PE" => 12547,  //Pernambuco (PE) - http://bibliotecas.cultura.gov.br/agente/12547/
+            "PI" => 12552,  //Piauí (PI) - http://bibliotecas.cultura.gov.br/agente/12552/
+            "RJ" => 202473, //Rio de Janeiro (RJ) - http://mapas.cultura.gov.br/agente/202473/
+            "RN" => 101339, //Rio Grande do Norte (RN) - já tem -  http://mapas.cultura.gov.br/agente/101339/
+            "RS" => 12557,  //Rio Grande do Sul (RS) - http://bibliotecas.cultura.gov.br/agente/12557/
+            "RO" => 12556,  //Rondônia (RO) - http://bibliotecas.cultura.gov.br/agente/12556/
+            "RR" => 12555,  //Roraima (RR) - http://bibliotecas.cultura.gov.br/agente/12555/
+            "SC" => 12553,  //Santa Catarina (SC) - http://bibliotecas.cultura.gov.br/agente/12553/
+            "SP" => 203776, //São Paulo (SP) - já tem - http://mapas.cultura.gov.br/agente/203776/
+            "SE" => 101907, //Sergipe (SE) - já tem - http://mapas.cultura.gov.br/agente/101907/
+            "TO" => 12551   //Tocantins (TO) - http://bibliotecas.cultura.gov.br/agente/12551/
+        ];
+        $source_agent_id = 1;
+
+        $bibliotecas = $conn->fetchAll("
+            SELECT
+                s.id,
+                s.name,
+                estado.value AS estado
+            FROM
+                space s
+                LEFT JOIN space_meta estado  ON estado.key  = 'En_Estado' AND estado.object_id = s.id
+            WHERE
+                s.status > 0
+            AND s.agent_id = $source_agent_id
+        ");
+
+        $falhas = [];
+        for ($i = 0; $i < count($bibliotecas); $i++) {
+            $bib = $bibliotecas[$i];
+            if (isset($bib['estado']) && $bib['estado'] != 'NULL') {
+                $sql = "UPDATE space SET agent_id={$mapeamento[$bib['estado']]} WHERE space_id={$bib['id']}";
+                echo "\n $i: $sql";
+                $conn->executeQuery($sql);
+            } else {
+                array_push($falhas, $bib);
+            }
+        }
+
+        echo "\n\n\n ----------------------------- \n\n Falhas \n";
+
+        for ($i = 0; $i < count($falhas); $i++) {
+            $falha = $falhas[$i];
+            echo "\n $i: Falhado: UF \"{$falha['estado']}\", id: {$falha['id']}, nome: {$falha['name']}";
+        }
     }
 );
