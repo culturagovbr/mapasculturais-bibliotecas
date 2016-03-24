@@ -367,7 +367,7 @@ WHERE
 
     'Migra bibliotecas para os Sistemas Estaduais' => function () use ($conn, $app) {
         $mapeamento = [
-            "AC" => 200916, //Acre (AC) -  http://mapas.cultura.gov.br/espaco/200916/
+            //"AC" => 200916, //Acre (AC) -  http://mapas.cultura.gov.br/espaco/200916/
             "AL" => 202314, //Alagoas (AL) -  já tem http://mapas.cultura.gov.br/agente/202314/
             "AP" => 12493,  //Amapá (AP) - http://bibliotecas.cultura.gov.br/agente/12493/
             "AM" => 12511,  //Amazonas (AM) - http://bibliotecas.cultura.gov.br/agente/12511/
@@ -413,8 +413,8 @@ WHERE
         $falhas = [];
         for ($i = 0; $i < count($bibliotecas); $i++) {
             $bib = $bibliotecas[$i];
-            if (isset($bib['estado']) && $bib['estado'] != 'NULL') {
-                $sql = "UPDATE space SET agent_id={$mapeamento[$bib['estado']]} WHERE space_id={$bib['id']}";
+            if (isset($bib['estado']) && $bib['estado'] != 'NULL' && $bib['estado'] != 'AC') {
+                $sql = "UPDATE space SET agent_id={$mapeamento[$bib['estado']]} WHERE id={$bib['id']}";
                 echo "\n $i: $sql";
                 $conn->executeQuery($sql);
             } else {
@@ -427,6 +427,54 @@ WHERE
         for ($i = 0; $i < count($falhas); $i++) {
             $falha = $falhas[$i];
             echo "\n $i: Falhado: UF \"{$falha['estado']}\", id: {$falha['id']}, nome: {$falha['name']}";
+        }
+    },
+
+    'Completa Dados das Bibliotecas a partir de geocode obtido' => function () use ($conn, $app) {
+        $bibliotecas_geocoded = json_decode(file_get_contents(__DIR__ . '/bibliotecas-salvas.json'), true);
+
+        foreach ($bibliotecas_geocoded as $id => $bib_geocoded) {
+            $data = [];
+
+            // extrai dados do geocode
+            foreach($bib_geocoded['geocode']['results'][0]['address_components'] as $address_components) {
+                if (array_search('administrative_area_level_1', $address_components['types']) !== false) {
+                    $data['En_Estado'] = $address_components['short_name'];
+                }
+                if (array_search('locality', $address_components['types']) !== false) {
+                    $data['En_Municipio'] = $address_components['long_name'];
+                }
+                if (array_search('sublocality', $address_components['types']) !== false) {
+                    $data['En_Bairro'] = $address_components['long_name'];
+                }
+                if (array_search('route', $address_components['types']) !== false) {
+                    $data['En_Nome_Logradouro'] = $address_components['long_name'];
+                }
+                if (array_search('street_number', $address_components['types']) !== false) {
+                    $data['En_Num'] = $address_components['long_name'];
+                }
+            }
+
+            // itera sobre os dados extraídos do geocode altera o banco de dados apenas se a biblioteca não possuir o metadado preenchido
+            foreach ($data as $key => $value) {
+                $value = str_replace("'", "''", $value);
+
+                $metadado_atual = $conn->fetchAll("SELECT * FROM space_meta WHERE object_id = $id AND key = '$key'");
+
+                if (count($metadado_atual)) {
+                    if (trim($metadado_atual[0]['value'])) {
+                        // existente (manter, nada a fazer)
+                    } else {
+                        // existente, porém em branco (atualizar)
+                        $query = "UPDATE space_meta SET value = $value WHERE object_id = $id AND key = '$key'";
+                        $conn->executeQuery($query);
+                    }
+                } else {
+                    // inexistente (inserir)
+                    $query = "INSERT INTO space_meta (object_id, key, value) VALUES ({$id}, '{$key}', '{$value}')";
+                    $conn->executeQuery($query);
+                }
+            }
         }
     }
 );
