@@ -367,7 +367,7 @@ WHERE
 
     'Migra bibliotecas para os Sistemas Estaduais' => function () use ($conn, $app) {
         $mapeamento = [
-            "AC" => 200916, //Acre (AC) -  http://mapas.cultura.gov.br/espaco/200916/
+            //"AC" => 200916, //Acre (AC) -  http://mapas.cultura.gov.br/espaco/200916/
             "AL" => 202314, //Alagoas (AL) -  já tem http://mapas.cultura.gov.br/agente/202314/
             "AP" => 12493,  //Amapá (AP) - http://bibliotecas.cultura.gov.br/agente/12493/
             "AM" => 12511,  //Amazonas (AM) - http://bibliotecas.cultura.gov.br/agente/12511/
@@ -413,8 +413,8 @@ WHERE
         $falhas = [];
         for ($i = 0; $i < count($bibliotecas); $i++) {
             $bib = $bibliotecas[$i];
-            if (isset($bib['estado']) && $bib['estado'] != 'NULL') {
-                $sql = "UPDATE space SET agent_id={$mapeamento[$bib['estado']]} WHERE space_id={$bib['id']}";
+            if (isset($bib['estado']) && $bib['estado'] != 'NULL' && $bib['estado'] != 'AC') {
+                $sql = "UPDATE space SET agent_id={$mapeamento[$bib['estado']]} WHERE id={$bib['id']}";
                 echo "\n $i: $sql";
                 $conn->executeQuery($sql);
             } else {
