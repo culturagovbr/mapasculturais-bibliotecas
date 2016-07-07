@@ -367,7 +367,7 @@ WHERE
 
     'Migra bibliotecas para os Sistemas Estaduais' => function () use ($conn, $app) {
         $mapeamento = [
-            //"AC" => 200916, //Acre (AC) -  http://mapas.cultura.gov.br/espaco/200916/
+            "AC" => 18266, //Acre (AC) -  http://mapas.cultura.gov.br/agente/18266/
             "AL" => 202314, //Alagoas (AL) -  já tem http://mapas.cultura.gov.br/agente/202314/
             "AP" => 12493,  //Amapá (AP) - http://bibliotecas.cultura.gov.br/agente/12493/
             "AM" => 12511,  //Amazonas (AM) - http://bibliotecas.cultura.gov.br/agente/12511/
