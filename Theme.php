@@ -26,16 +26,16 @@ class Theme extends BaseMinc\Theme {
 //
 //            'search: verified results' => 'Resultados Verificados',
 //            'search: verified' => "Verificados"
-            
-                        
+
+
             'entities: Spaces of the agent'=> 'Bibliotecas do agente',
             'entities: Space Description'=> 'Descrição da Biblioteca',
             'entities: My Spaces'=> 'Minhas Bibliotecas',
             'entities: My spaces'=> 'Minhas bibliotecas',
-            
+
             'entities: no registered spaces'=> 'nenhuma biblioteca cadastrada',
             'entities: no spaces'=> 'nenhuma biblioteca',
-            
+
             'entities: Space' => 'Biblioteca',
             'entities: Spaces' => 'Bibliotecas',
             'entities: space' => 'biblioteca',
@@ -43,7 +43,7 @@ class Theme extends BaseMinc\Theme {
             'entities: parent space' => 'biblioteca mãe',
             'entities: a space' => 'uma biblioteca',
             'entities: the space' => 'a biblioteca',
-            'entities: of the space' => 'da biblioteca',            
+            'entities: of the space' => 'da biblioteca',
             'entities: In this space' => 'Nesta biblioteca',
             'entities: in this space' => 'nesta biblioteca',
             'entities: registered spaces' => 'bibliotecas cadastradas',
@@ -55,8 +55,8 @@ class Theme extends BaseMinc\Theme {
         $app = App::i();
 
         /*
-         *  Modifica a consulta da API de espaços para só retornar Bibliotecas 
-         * 
+         *  Modifica a consulta da API de espaços para só retornar Bibliotecas
+         *
          * @see protectec/application/conf/space-types.php
          */
         $app->hook('API.<<*>>(space).query', function(&$data, &$select_properties, &$dql_joins, &$dql_where) {
@@ -64,12 +64,12 @@ class Theme extends BaseMinc\Theme {
         });
 
         parent::_init();
-        
-        
+
+
         $app->hook('template(space.<<create|edit|single>>.tabs):end', function(){
             $this->part('tabs-biblioteca', ['entity' => $this->data->entity]);
         });
-        
+
         $app->hook('template(space.<<create|edit|single>>.tabs-content):end', function(){
             $this->part('tab-publico', ['entity' => $this->data->entity]);
             $this->part('tab-acervo', ['entity' => $this->data->entity]);
@@ -80,6 +80,10 @@ class Theme extends BaseMinc\Theme {
 
         $app->hook('template(space.<<create|edit|single>>.acessibilidade):after', function(){
             $this->part('acessibilidade', ['entity' => $this->data->entity]);
+        });
+
+        $app->hook('template(space.<<create|edit|single>>.tab-about-extra-info):before', function(){
+            $this->part('horario-funcionamento', ['entity' => $this->data->entity]);
         });
     }
 
@@ -98,7 +102,7 @@ class Theme extends BaseMinc\Theme {
     protected function _getEventMetadata() {
         return [];
     }
-    
+
     protected function _getProjectMetadata() {
         return [];
     }
