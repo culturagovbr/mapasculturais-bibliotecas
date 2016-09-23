@@ -106,19 +106,20 @@ return array(
         'En_CEP' => [
             'label' => 'CEP',
             'validations' => [
-                'required' => ' é um campo obrigatório.'
+                'v::postalCode("BR")' => 'Cep inválido',
+                'required' => 'Cep é um campo obrigatório.'
             ]
         ],
         'En_Nome_Logradouro' => [
             'label' => 'Logradouro',
             'validations' => [
-                'required' => ' é um campo obrigatório.'
+                'required' => 'Logradouro é um campo obrigatório.'
             ]
         ],
         'En_Num' => [
             'label' => 'Número',
             'validations' => [
-                'required' => ' é um campo obrigatório.'
+                'required' => 'Número é um campo obrigatório.'
             ]
         ],
         'En_Complemento' => [
@@ -127,19 +128,19 @@ return array(
         'En_Bairro' => [
             'label' => 'Bairro',
             'validations' => [
-                'required' => ' é um campo obrigatório.'
+                'required' => 'Bairro é um campo obrigatório.'
             ]
         ],
         'En_Municipio' => [
             'label' => 'Município',
             'validations' => [
-                'required' => ' é um campo obrigatório.'
+                'required' => 'Município é um campo obrigatório.'
             ]
         ],
         'En_Estado' => [
             'label' => 'Estado',
             'validations' => [
-                'required' => ' é um campo obrigatório.'
+                'required' => 'Estado é um campo obrigatório.'
             ],
             'type' => 'select',
             'options' => array(
