@@ -192,7 +192,7 @@ WHERE
             $space->__metadata->En_CEP = $space->cep;
 
             unset($space->id, $space->vinculo, $space->telefone, $space->email, $space->cep, $space->endereco);
-            
+
             if($matches){
                 $space->__metadata->En_Nome_Logradouro = $matches['rua'];
                 $space->__metadata->En_Num = $matches['num'];
@@ -285,9 +285,9 @@ WHERE
 
             return trim($str);
         }
-        
+
         $_repetidas = $repetidas;
-        
+
         $repetidas = array_map(function($e){ return sanitize($e); }, $repetidas);
 
         $spaces = json_decode(file_get_contents(__DIR__ . '/bibliotecas.json'));
@@ -310,7 +310,7 @@ WHERE
                     if($logradouro && preg_match('#' . preg_quote($logradouro) . '#', $r)){
                         $c++;
                         unset($_repetidas[$i]);
-                        
+
                         $eh_repetida = true;
 
                     }else if ($municipio && preg_match('#' . preg_quote($municipio) . '#', $r)){
@@ -324,7 +324,7 @@ WHERE
                         unset($_repetidas[$i]);
 
                         $eh_repetida = true;
-                    } 
+                    }
                 }
             }
             if(!$eh_repetida){
@@ -476,5 +476,17 @@ WHERE
                 }
             }
         }
+    },
+    'bib: remove duplicated spaces ' => function() use ($app, $em){
+        $bib_cods = array_map('intval', explode("\n", file_get_contents(__DIR__ . '/bibliotecas-duplicadas.csv')));
+
+        $bibs = $app->repo('Space')->findby(['id' => $bib_cods]);
+
+        foreach ($bibs as $bib){
+            echo "Removing \"$bib->name\" (space of id $bib->id )\n";
+            $em->remove($bib);
+        }
+
+        $em->flush();
     }
 );
