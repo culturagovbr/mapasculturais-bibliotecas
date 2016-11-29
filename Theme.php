@@ -51,7 +51,7 @@ class Theme extends BaseMinc\Theme {
         );
     }
 
-    protected function _init() {
+    public function _init() {
         $app = App::i();
 
         /*
