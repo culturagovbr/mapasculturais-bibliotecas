@@ -729,17 +729,6 @@ class Theme extends BaseMinc\Theme {
 
     function _getFilters(){
         $filters = parent::_getFilters();
-        $filters['space'][] = [
-            'fieldType' => 'text',
-            'label' => 'Município',
-            'isInline' => false,
-            'isArray' => false,
-            'placeholder' => 'Selecione os Municípios',
-            'filter' => [
-                'param' => 'En_Municipio',
-                'value' => 'ILIKE(*{val}*)'
-            ]
-        ];
         array_unshift(
             $filters['space'],
             [
@@ -749,6 +738,16 @@ class Theme extends BaseMinc\Theme {
                 'filter' => [
                     'param' => 'En_Estado',
                     'value' => 'IN({val})'
+                ]
+            ],
+            [
+                'fieldType' => 'text',
+                'label' => 'Município',
+                'isArray' => false,
+                'placeholder' => 'Selecione os Municípios',
+                'filter' => [
+                    'param' => 'En_Municipio',
+                    'value' => 'ILIKE(*{val}*)'
                 ]
             ]
         );
