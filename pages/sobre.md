@@ -1,8 +1,13 @@
-# Sobre o Cadastro Nacional de Bibliotecas {#title}
+# Sobre o Mapa das Bibliotecas
 
-O objetivo do cadastro é mapear de maneira abrangente as bibliotecas públicas e comunitárias existentes no país, levantando dados hoje pouco conhecidos, como a relação institucional, público alvo, acervo, serviços, infraestrutura e gestão.
+O Mapa das Bibliotecas é uma das peças do Cadastro Nacional de Bibliotecas e está voltado para a difusão e promoção das bibliotecas brasileiras, a fim de reunir informações sobre todos os tipos de bibliotecas, especialmente, as públicas e comunitárias.
 
-O novo formato do cadastramento, agora todo online, também será aberto para consulta de cidadãos, instituições públicas ou privadas, e, principalmente, dos governos municipais e estaduais, oferecendo informações atualizadas para a constituição de redes locais de bibliotecas e para o desenvolvimento de políticas locais de acesso à leitura e à informação. Esta nova ferramenta parte de uma concepção política que valoriza a autonomia e o controle social.
+Os dados estão integrados com o [Mapa da Cultura](http://mapas.cultura.gov.br/), sendo assim, todas as bibliotecas cadastradas no Mapa das Bibliotecas ou no Mapa da Cultura aparecem nas duas instalações, em tempo real.
 
-Neste primeiro momento disponibilizamos a tod@s  os contatos e o georeferênciamento de todas as bibliotecas públicas cadastradas do Sistema Nacional de Bibliotecas Públicas.  No segundo semestre deste ano, iremos abrir o cadastro para que os gestores complementem as demais as informações sobre suas bibliotecas.
+A plataforma foi desenvolvida pelo Instituto TIM em parceria com o Ministério da Cultura. Você encontra mais informações sobre a ferramenta Mapas Culturais no site do [Instituto TIM](https://institutotim.org.br/project/mapas-culturais/).
 
+**Realização**
+
+<img class="sobre-logo-prefeitura alignleft" src="/assets/bib/img/instituto-tim-white.png" alt="Insituto TIM" />
+<img class="sobre-logo-prefeitura alignleft" src="/assets/bib/img/minc_logo.png" alt="MinC - Ministério da Cultura" />
+<img class="sobre-logo-prefeitura alignleft" src="/assets/bib/img/SNBP_logo.png" alt="SNBP - Sistema Nacional de Bibliotecas Públicas" />
