@@ -59,9 +59,9 @@ class Theme extends BaseMinc\Theme {
          *
          * @see protectec/application/conf/space-types.php
          */
-        $app->hook('API.<<*>>(space).params', function(&$api_params) {
-            $api_params['type'] = 'BET(20,29)';
-        });
+        // $app->hook('API.<<*>>(space).params', function(&$api_params) {
+        //     $api_params['type'] = 'BET(20,29)';
+        // });
 
         parent::_init();
 
