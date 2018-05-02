@@ -6,4 +6,7 @@ return [
     'app.enabled.apps'     => false,
     
     'snbp.agentId' => 1,
+	
+	'notifications.entities.update' => 0,
+    'notifications.seal.toExpire'   => 0
 ];
